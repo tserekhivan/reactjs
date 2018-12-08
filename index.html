@@ -24,8 +24,177 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-background="./src/react.jpeg" data-background-size="contain">
+				</section>
+				<section>
+					<h2>Why React</h2>
+					<p class="fragment fade-up">Easy to Learn, Easy to Use</p>
+					<p class="fragment fade-up">Reusable Components</p>
+					<p class="fragment fade-up">The Virtual DOM</p>
+					<p class="fragment fade-up">The Ecosystem</p>
+				</section>
+				<section>
+					Example "Hello, World"
+					<pre><code data-trim>
+						// Main component
+						import React from 'react';
+						import ReactDom from 'react-dom';
+						import HelloWorld from './HelloWorld'
+
+						ReactDom.render(HelloWorld, document.getElementById('root'));
+
+						// Hello World component
+						import React from 'react';
+
+						const HelloWorld = (props) => <h1>Hello, World</h1>;
+
+						export default HelloWorld;
+					</code></pre>
+				</section>
+				<section>
+					<section>
+						<p>Important! There is no html in the React, there is JSX</p>
+					</section>
+					<section>
+						JSX Examples
+						<pre><code data-trim>
+							const helloWorld = <h1>Hello, World!</h1>;
+						</code></pre>
+						<pre><code data-trim>
+							const helloWorld = () => <h1>Hello, World!</h1>;
+						</code></pre>
+						<pre><code data-trim>
+							const helloWorld = () => (
+							  <h1>Hello, World!</h1>
+							);
+						</code></pre>
+						<pre><code data-trim>
+							const helloWorld = () => {
+							  // additional code
+
+							  return (
+							    <h1>Hello, World!</h1>;
+							   )
+							}
+						</code></pre>
+					</section>
+					<section>
+						More JSX
+						<pre><code data-trim>
+							const user = {
+							  firsName = 'Alexandr';
+							  lastname = 'White';
+							}
+
+							function formatName(user) {
+							  return user.firstname + ' ' + user.lastName;
+							}
+
+							const element = (
+							  <h1>Helo, {formatName(user)}!</h1>
+							)
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					Render elements
+					<pre><code data-trim>
+						// point of mount out app. Locate in index.html
+						<div id="root"></div>
+
+						// sipmle element connect to the page
+						const element = <h1>Hello, World</h1>
+						ReactDOM.render(element, document.getElementById('root'));
+					</code></pre>
+				</section>
+				<section>
+					<section>
+					React Only Updates What’s Necessary
+					<pre><code data-trim>
+						function tick() {
+						  const element = (
+						    <div>
+						      <h1>Hello, world!</h1>
+						      <h2>It is {new Date().toLocaleTimeString()}.</h2>
+						    </div>
+						  );
+						ReactDOM.render(element, document.getElementById('root'));
+						} 
+						
+						setInterval(tick, 1000);
+					</code></pre>
+					</section>
+					<section data-background-image="./src/time.gif" data-background-size="auto">
+					</section>
+				</section>
+				<section>
+					<section>
+            <h2>Components</h2>
+            <img data-src="./src/components.png">
+					</section>
+					<section>
+							JavaScript function
+							<pre><code data-trim>
+								function Welcome(props) {
+								  return <h1>Hello, {props.name}</h1>;
+								}
+							</code></pre>
+							ES6 class
+							<pre><code data-trim>
+								class Welcome extends React.Component {
+								  render() {
+								    return <h1>Hello, {this.props.name}</h1>;
+								  }
+								}
+							</code></pre>
+					</section>
+        </section>
+        <section>
+          Props
+          <pre><code data-trim>
+          // inner component code
+          function Welcome(props) {
+            return <h1>Hello, {props.name}! You are {props.age}!</h1>;
+          }
+
+          // using the Welcom component
+          <Welcome name="Ivan" age="29"/>
+          </code></pre>	
+        </section>
+				<section>
+					<section>
+            <h2>States</h2>
+            <pre><code data-trim>
+              class collapsArea extends Component {
+                state = {
+                  open: false;
+                }
+
+                switchVisability = () => {
+                  this.setState({
+                    open: !this.state.open
+                  });
+                }
+
+                render() {
+                  return (
+                    <div>
+                      <button onClick={this.switchVisability}>{this.state.open ? 'Hide':'Show'}></button>
+                      {contentBlock}
+                    </div>
+                  )
+                }
+              }
+            </code></pre>	
+					</section>
+				</section>
+				<section>
+					React lifecycle methods
+					<img data-src="./src/img1.png">
+        </section>
+        <section>
+          <h2>Read more on REACTJS.ORG</h2>
+        </section>
 			</div>
 		</div>
 
