@@ -1,0 +1,45 @@
+React is an interface creation library developed by Facebook. It is currently popular among front-end developers.
+
+Why?
+- Studying the React (at least its basics) is easy. In essence, React is JavaScript, in which there is a small API, a set of
+functions performed for rendering an application.
+- The basis of the React - components, reusable pieces of code. Having written one component, you can be use it in different
+applications.
+- React uses a virtual DOM. Thus every time any change in state occurs, React creates a virtual DOM, compares it to the real
+DOM, and instead of redrawing the real DOM, redraws only the changes.
+- Ecosystem. Large community where to find some package or answer to the question is not a problem.
+
+This is a small example. It shows how using import you can include React to the application.
+
+Important: There is no html in the React, there is JSX, its syntax is very similar to HTML. Only 'className' is
+used to denote classes, and JavaScript can be used anywhere in JSX.
+You can embed any JavaScript expression in JSX by wrapping it in curly braces
+
+How to connect React. There is a mount point. In this case, this is the element with the root ID. In the ReactDOM.render
+function, which starts the drawing, we pass the React component and the place where it should be inserted.
+
+React only changes what has been updated. In this example, only the time will be redrawn every second, the other elements
+will not be touched.
+
+Components are the most important part of a React. React is designed around the concept of reusable components.
+You define small components and combine them to form larger components.
+Component React - in fact, this is the usual JS function. It takes the props parameter (object) and returns a piece of the
+interface.
+And then this component is used as a part of another component.
+
+There are two types of components: functional and class-based. They are also called stateless and statefull components.
+Stateless components are called this because they cannot change the state of the application, thus cannot change the data.
+Their role is only to get props from the parent and on their basis draw a piece of the interface.
+In stateful components you can change the state of the component, process data.
+
+Components accept the props parameter. This is an object that contains all the parameters necessary to draw the
+component. Props are used only for data transfer. When we insert a component, a new instance of the constructor function is
+created, the props is passed as arguments.
+
+State is similar to props, but it is private and fully controlled by the component.
+We use state of object for dynamic parameters, which controls the behavior of our component
+We can use state only in Class based components
+
+Each component has a lifecycle: the component will be mounted, the component will be drawn, the component will be
+deleted, and so on ...
+All these phases have methods, so-called lifecycle-methods.
